@@ -135,26 +135,10 @@ $(function () {
   });
 
   // calculator
-  // let summ =
-  //   $(".nights").val() * $(".summ").data("nights") +
-  //   ($(".guests").val() - 1) * $(".summ").data("guests");
-  // $(".summ").html("$" + summ);
-
-  // $(".quantity-button").on("click", function () {
-  //   let summ =
-  //     $(".nights").val() * $(".summ").data("nights") +
-  //     ($(".guests").val() - 1) * $(".summ").data("guests");
-  //   $(".summ").html("$" + summ);
-  // });
-
-  var parents = $(this).parents(".holder-slider");
   let summ =
-    $(".guests", parents).val() *
-    $(".summ", parents).data("nights") *
-    $(".nights", parents).val();
-  $(".summ", parents).html("$" + summ.toFixed(1));
+    $(".guests").val() * $(".summ").data("nights") * $(".nights").val();
+  $(".summ").html("$" + summ.toFixed(1));
 
-  // изменение цены при клике для каждого слайда
   $(".quantity").on("click", function () {
     var parents = $(this).parents(".slick-current");
     let summ =
